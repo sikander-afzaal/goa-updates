@@ -185,6 +185,7 @@
     display: block;
     visibility: hidden;
     opacity: 0;
+    width: 80px;
   }
 
   .show-logo {
@@ -261,9 +262,5 @@
 
   .header .play-demo {
     width: 120px;
-  }
-
-  .head-logo {
-    max-width: 110px;
   }
 }
