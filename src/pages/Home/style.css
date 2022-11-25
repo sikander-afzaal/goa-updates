@@ -61,7 +61,30 @@
   align-items: center;
   position: relative;
 }
+.more-info {
+  width: max-content;
+  height: 54px;
+  cursor: url(../../assets/icons/spider-black.svg), auto;
+  font-size: 15px;
+  padding: 15px;
+  background-color: transparent;
+  color: black;
+  letter-spacing: 3px;
+  transition: all 0.4s ease-in-out;
+  font-family: "Kanit", sans-serif;
+  font-weight: bold;
+  background-image: linear-gradient(90deg, #f5d3a6, #a77c2e);
 
+  background-size: 400%;
+  background-position: 0% 0%;
+  border-radius: 60px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+}
 @keyframes gradientRotate {
   0% {
     background-position: 0% 0%;
@@ -71,24 +94,30 @@
     background-position: 100% 100%;
   }
 }
-
-.mint::before {
+.more-info {
+  background-image: linear-gradient(#131313, #131313);
+  border: 1px solid #f5d28f;
+  color: white;
+  border-radius: 10px;
+  transition: 0.5s ease;
+}
+.mint::before,
+.more-info::before {
   content: "";
   position: absolute;
   left: -2px;
   top: -2px;
   right: -2px;
-  bottoteamm: -2px;
+  bottom: -2px;
   border-radius: 26px;
   background-image: linear-gradient(
-    90deg,
-    #a77c2e,
-    #efc842,
-    #746f29,
-    #5d5e0f,
-    #a77c2e,
-    #efc842
+    to right,
+    #d4c78c 21.39%,
+    #debf70 34.64%,
+    #ae9555 44.61%,
+    #a78c47 57.04%
   );
+
   background-size: 500%;
   background-position: 0% 0%;
   filter: blur(10px);
@@ -96,21 +125,27 @@
   z-index: -1;
   transition: opacity 0.2s;
 }
-
-.mint:hover {
+.more-info::before {
+  border-radius: 0px;
+}
+.mint:hover,
+.more-info:hover {
   animation: gradientRotate 2s infinite;
 }
 
-.mint:hover::before {
+.mint:hover::before,
+.more-info:hover::before {
   opacity: 1;
   animation: gradientRotate 2s infinite;
 }
 
-.mint:active {
+.mint:active,
+.more-info:active {
   color: #c3c4d5;
 }
 
-.mint:focus::before {
+.mint:focus::before,
+.more-info:focus::before {
   opacity: 1;
 }
 
@@ -139,8 +174,7 @@
   position: relative;
 }
 
-.rent::before,
-.more-info::before {
+.rent::before {
   content: "";
   position: absolute;
   left: 0;
@@ -157,15 +191,7 @@
   transition: border-color 0.2s;
 }
 
-.more-info::before {
-  border-radius: 10px;
-  background-image: linear-gradient(#11141d, #11141d),
-    linear-gradient(90deg, #a77c2e, #efc842);
-  border: 1px solid transparent !important;
-}
-
-.rent::after,
-.more-info::after {
+.rent::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -180,28 +206,23 @@
   z-index: -1;
 }
 
-.rent:hover,
-.more-info:hover {
+.rent:hover {
   color: white;
 }
 
-.rent:hover::after,
-.more-info:hover::after {
+.rent:hover::after {
   transform: translate(-50%, -50%) scale(1);
 }
 
-.rent:active,
-.more-info:active {
+.rent:active {
   color: #c3c4d5;
 }
 
-.rent:focus,
-.more-info:focus {
+.rent:focus {
   color: white;
 }
 
-.rent:focus::before,
-.more-info:focus::before {
+.rent:focus::before {
   border-color: #a77c2e;
 }
 
@@ -777,7 +798,7 @@
 
 .built-box div {
   height: 100%;
-  background-color: #11141d;
+  background-color: #131313;
   border-radius: 24px;
   width: 100%;
   display: grid;
@@ -789,7 +810,7 @@
 
 .feat-box div {
   height: 100%;
-  background-color: #11141d;
+  background-color: #131313;
   border-radius: 24px;
   width: 100%;
   display: grid;
@@ -840,28 +861,6 @@
   color: white;
   text-align: left;
   opacity: 60%;
-}
-
-.more-info {
-  border: 1px solid transparent;
-  color: #a77c2e;
-  text-align: center;
-  cursor: url(../../assets/icons/spider-orange.svg), auto;
-  border-radius: 10px;
-  width: max-content;
-  background: transparent;
-  font-weight: bold;
-  font-size: 1rem;
-  opacity: 1;
-  height: max-content;
-  padding: 15px 30px;
-  transition: all 0.4s ease-in-out;
-  font-family: "Kanit", sans-serif;
-  background-color: transparent;
-  background-clip: padding-box;
-  overflow: hidden;
-  z-index: 1;
-  position: relative;
 }
 
 .feat-box h3 {
@@ -1131,7 +1130,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #11141d;
+  background-color: #131313;
   padding: 35px;
   border-radius: 10px;
   gap: 15px;
@@ -1612,11 +1611,7 @@
   width: 100%;
   padding: 2rem 2rem;
 
-  background: linear-gradient(
-    92.91deg,
-    rgba(19, 22, 30, 0.76) 1.78%,
-    rgba(19, 22, 30, 0.62) 99.64%
-  );
+  background: #131313;
   border-top: 15px;
   cursor: url(../../assets/icons/spider-orange.svg), auto;
   color: white;
@@ -1645,15 +1640,11 @@
   max-height: 0px;
   overflow-y: hidden;
   color: white;
-  background: #0a1f3a78;
+  background: #131313;
   border-radius: 7px;
   width: 100%;
   font-family: "Noto Sans", sans-serif;
-  background: linear-gradient(
-    92.91deg,
-    rgba(19, 22, 30, 0.76) 1.78%,
-    rgba(19, 22, 30, 0.62) 99.64%
-  );
+
   box-shadow: 0 2px 2px rgb(0 0 0 / 72%);
 }
 
