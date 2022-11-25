@@ -15,7 +15,7 @@
 
 .black-nav {
   backdrop-filter: blur(10px);
-  background-color: hsl(188deg 48% 6%);
+  background-color: #130707;
 }
 
 .black-nav .nav_ul a,
